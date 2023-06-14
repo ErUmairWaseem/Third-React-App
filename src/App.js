@@ -1,52 +1,37 @@
 import { useState } from "react";
 
-function App() {
-  return (
+function App(){
+  return(
     <>
-      <h1>Counter App</h1>
-      <CounterApp />
-      <CounterApp />
-      <CounterApp />
-
+      <h1>String Demo</h1>
+      <StringDemo />
     </>
   );
 }
 
-function CounterApp() {
-  let [counter, setCounter] = useState(1);
+function StringDemo() {
+  let [title , setTitle] = useState("Hellooouuu World");
 
-  let LikeMeAction = () => {
-    counter = counter + 1;
-    console.log(counter);
+  let lowerCaseAction = () => {
+     title = title.toLowerCase();
+    console.log(title);
 
-    setCounter(counter);
+    setTitle(title);
   };
-  
-  let [counter2, setCounter2] = useState(1);
-  let DisLikeMeAction = () => {
-    counter2 = counter2 - 1;
-    console.log(counter2);
 
-    setCounter(counter2);
+  let UpperCaseAction = () => {
+    title = title.toUpperCase();
+    console.log(title);
+
+    setTitle(title);
   };
-  return (
+
+  return(
     <>
-      <h5>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quia
-        consequatur, esse repellendus omnis hic mollitia aperiam neque, enim
-        aspernatur eum nobis asperiores harum, ducimus sunt ex. Ullam voluptatem
-      </h5>
-
-      <h5>
-        {counter}
-        <input type="button" value="&#128077;" onClick={LikeMeAction} />
-        {counter2}
-        <input type="button" value="&#128078;" onClick={DisLikeMeAction} />
-        
-      </h5>
-      
+    <h1>{title}</h1>
+    <input type="button" value="Lower Case" onClick={lowerCaseAction}/>
+    <input type="button" value="Upper Case" onClick={UpperCaseAction}/>
     </>
   );
 }
-
-export default App;
+export default App
