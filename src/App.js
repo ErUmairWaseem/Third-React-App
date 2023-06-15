@@ -24,10 +24,10 @@ function CounterApp() {
   
   let [counter2, setCounter2] = useState(1);
   let DisLikeMeAction = () => {
-    counter2 = counter2 - 1;
+    counter2 = counter2 + 1;
     console.log(counter2);
 
-    setCounter(counter2);
+    setCounter2(counter2);
   };
   return (
     <>
